@@ -70,6 +70,7 @@ body{
 .menu{
   cursor: pointer;
 }
+
 .menu .line {
   width: 25px;
   height: 3px;
