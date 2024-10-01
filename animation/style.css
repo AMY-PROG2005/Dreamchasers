@@ -25,7 +25,11 @@ body{
   cursor: none;
   margin: 0;
   padding: 0;
+  background-image:url('/Dreamchasers/media/background_space.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
+
 #dot,
 #ball {
   position: absolute;
@@ -83,6 +87,7 @@ body{
 .planets{
   position: relative;
   height: 100vh;
+  overflow: hidden;
 }
 
 #dot {
@@ -171,7 +176,7 @@ body{
 .background_pattern{
   position: absolute;
   opacity: .2;
-  inset: 40px 0 0 0;
+  inset: 50px 0 0 0;
   color: #fff;
 }
 
@@ -266,7 +271,6 @@ body input[type=radio][name=planet]::after {
 
 body {
   overflow-x: hidden;
-  background: black;
   height: 100vh;
   font-family: "Montserrat", sans-serif;
 }
@@ -505,7 +509,8 @@ body .overlay {
   opacity: 1;
   border-radius: 100%;
   z-index: 0;
-  box-shadow: 0px -190px 215px 110px black inset;
+  box-shadow: 0px -190px 215px 110px transparent;
+    inline-size: fit-content;
 }
 body input[type=radio][name=planet] {
   appearance: none;
@@ -2356,6 +2361,7 @@ body .solar_systm .planet_description a span {
 }
 body .panel {
   position: absolute;
+  display: flex;
     right: -520px;
     width: 300px;
     top: 0;
@@ -2363,9 +2369,11 @@ body .panel {
     height: 100vh;
     transition: all 0.2s;
     color: black;
-    background: white;
+    background: rgb(0, 0, 0);
     overflow: scroll;
- 
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
 }
 body .panel body::-webkit-scrollbar {
   width: 1em;
@@ -2535,14 +2543,55 @@ i {
   display: flex;
   justify-content: center;
   align-items: center;
+  height:100%;
   perspective: 1000px;
 }
 
 #earthplanet {
-  width: 200px;
-  height: 200px;
+  width: 500px;
+  height: 500px;
   border-radius: 50%;
   background: url('../media/Dailymotion_2.gif') center center / cover no-repeat;
   box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
 
+
 }
+
+
+
+.text-panel{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 300px;
+  font-weight: bold;
+  margin-left: 40px;
+  gap: 10rem;
+  border-bottom: solid #fff 1px;
+}
+
+.text-panel2{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 300px;
+  font-weight: bold;
+  margin-left: 40px;
+
+  padding: 20px;
+}
+
+.border-bottom{
+  border: solid rgba(255, 255, 255, .5) .5px;
+  margin-bottom: 40px;
+  padding: 20px;
+}
+
+.border-bottom2{
+  border: solid #fff .5px;
+  margin-bottom: 40px;
+  padding: 20px;
+}
+
