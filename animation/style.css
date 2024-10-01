@@ -65,6 +65,7 @@ body{
   width: 90vw;
   padding: 0 60px;
   position: fixed;
+  z-index: 9999999999999999999999999999999;
 }
 .menu{
   cursor: pointer;
@@ -101,7 +102,23 @@ body{
 }
 .hero{
   height: 100vh;
+  overflow: hidden;
+  position: relative;
+  background: url('../media/215697_tiny.mp4');
 }
+#background-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1;
+  transform: translate(-50%, -50%);
+  background-size: cover;
+}
+
 .headline{
   height: 100%;
   display: flex;
@@ -136,6 +153,31 @@ body{
   opacity: 1;
   margin: 0 !important;
 }
+
+.sunlight{
+  width: 100%;
+    margin-top: -135px;
+}
+.glowing-sun {
+  width: 500px;
+  height: 500px;
+  background-color: #ffdf94; /* Light yellow for the sun */
+  border-radius: 50%;
+  box-shadow: 0 0 40px 15px rgba(255, 223, 148, 0.9), 
+  0 0 60px 40px rgba(255, 223, 148, 0.7), 
+  0 0 120px 80px rgba(255, 223, 148, 0.5);
+  margin: 0 auto;
+}
+.background_pattern{
+  position: absolute;
+  opacity: .2;
+  inset: 40px 0 0 0;
+  color: #fff;
+}
+
+
+
+
 body .solar_systm .planet, body input[type=radio][name=planet]::after, body .overlay {
   position: absolute;
   left: 0;
@@ -2426,7 +2468,6 @@ i {
   animation: raining 90s linear Infinite;
 }
 
-
 .center {
   position: fixed;
   top: 0;
@@ -2471,20 +2512,7 @@ i {
 
 
 
-@keyframes raining {
-  0% {
-      transform: translateY(-160px);
-  }
-  100% {
-      transform: translateY(calc(100vh + 160px));
-  }
-}
 
-@keyframes text{
-  0%{
-      color: #2a2b30;
-  }
-}
 
 @keyframes ring{
   0%{
