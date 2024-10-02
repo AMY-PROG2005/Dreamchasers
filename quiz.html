@@ -6,139 +6,165 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/Dreamchasers/animation/index.css">
-    <script src="path/to/gl-matrix.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gl-matrix@2.8.1/gl-matrix-min.js"></script>
+   
 
 </head>
 <body>
-    <canvas id="starsCanvas"></canvas>
-<div id="meteorites">
-	<div class="star"></div>
-	<div class="star"></div>
-	<div class="star"></div>
-	<div class="star"></div>
-	<div class="star"></div>
-	<div class="star"></div>
-	<div class="star"></div>
-	<div class="star"></div>
-	<div class="star"></div>
-	<div class="star"></div>
-	<div class="star"></div>
-	<div class="star"></div>
-	<div class="star"></div>
-	<div class="star"></div>
-	<div class="star"></div>
-	<div class="star"></div>
-	<div class="star"></div>
-	<div class="star"></div>
-</div>
-<div class="spaceship"></div>
-<div class="spaceshipAlert alert"></div>
-<div class="spaceshipContainer">
-	<div class="container questionsContainer">
-		<div class="row" id="question1">
-			<div class="col-12">
-				<h1 class="questionTitle">If you're alone at your computer, how many fingers do you see?</h1>
-			</div>
-			<div class="col-3">
-				<a class="btn btn-default wrong" role="button">0</a>
-			</div>
-			<div class="col-3">
-				<a class="btn btn-default wrong" role="button">5</a>
-			</div>
-			<div class="col-3">
-				<a class="btn btn-default wrong" role="button">10</a>
-			</div>
-			<div class="col-3">
-				<a class="btn btn-default right" role="button">15</a>
-			</div>
-		</div>
-		<div class="row" id="question2">
-			<div class="col-12">
-				<h1 class="questionTitle">((√(2<sup>2</sup>))x2)/2 = ...</h1>
-			</div>
-			<div class="col-3">
-				<a class="btn btn-default wrong" role="button">0</a>
-			</div>
-			<div class="col-3">
-				<a class="btn btn-default wrong" role="button">1</a>
-			</div>
-			<div class="col-3">
-				<a class="btn btn-default right" role="button">2</a>
-			</div>
-			<div class="col-3">
-				<a class="btn btn-default wrong" role="button">ERROR</a>
-			</div>
-		</div>
-		<div class="row" id="question3">
-			<div class="col-12">
-				<h1 class="questionTitle">Click on <a class="right">the correct answer</a></h1>
-			</div>
-			<div class="col-3">
-				<a class="btn btn-default wrong" role="button">A</a>
-			</div>
-			<div class="col-3">
-				<a class="btn btn-default wrong" role="button">B</a>
-			</div>
-			<div class="col-3">
-				<a class="btn btn-default wrong" role="button">C</a>
-			</div>
-			<div class="col-3">
-				<a class="btn btn-default wrong" role="button">D</a>
-			</div>
-		</div>
-		<div class="row" id="failMsg">
-			<div class="col-12">
-				<h1 class="questionTitle">Wrong answer<br>Prepare for impact</h1>
-			</div>
-		</div>
-		<div class="row" id="successMsg">
-			<div class="col-12">
-				<h1 class="questionTitle">Good answer<br>You avoid impact</h1>
-			</div>
-		</div>
-		<div class="col-12 d-flex justify-content-center">
-			<span id="time" class="time">00:00.00</span>
-		</div>
-		<div id="score" class="row ">
-			<div class="col-12 d-flex justify-content-center">
-				<h2>Score : <span id="yourScore">0</span></h2>
-			</div>
-			<div class="col-12 d-flex justify-content-center" style="opacity:0">
-				<h4>Erreurs<span id="errorsCount">0</span></h4>
-			</div>
-		</div>
-	</div>
-</div>
+    <div class="indicator"></div>
 
-<div class="preloads" style="display:none">
-	<img class="astronaut" src="https://drive.google.com/thumbnail?id=1PFgLMXCR2R6s1jFMyLuSUvmPvJ3nAw2z&sz=w3000">
-	<img class="astronaut" src="https://drive.google.com/thumbnail?id=1l-dv7m_4mA7gZersFoVUSCA_YSX_3Wsk&sz=w3000">
-</div>
-<div id="start" class="startGame">
-	<h1 class="title">AstroQuiz</h1>
-	<div class="container introContainer">
-		<div class='console-container'><span id='text'></span>
-			<div class='console-underscore' id='console'>&#95;</div>
-		</div>
-	</div>
-	<a id="startBtn" class="btn btn-default" role="button">Start</a>
-</div>
-<div id="fail" class="endGame">
-	<h1 class="title">Too bad...</h1>
-	<div class="mini-spaceship"></div>
-	<div class="mini-meteorite"></div>
-	<div class="mini-explosion"></div>
-</div>
-<div id="medium" class="endGame">
-	<h1 class="title">Not bad ;)</h1>
-	<img class="astronaut" src="https://drive.google.com/thumbnail?id=18WGTljSx6w5OdPXCcapOJyMSCPckcEDK&sz=w1000">
-</div>
-<div id="perfect" class="endGame">
-	<h1 class="title">Perfect !</h1>
-	<img class="astronaut" src="https://drive.google.com/thumbnail?id=18WGTljSx6w5OdPXCcapOJyMSCPckcEDK&sz=w1000">
-</div>
+    <nav>
+      <div>
+        <div class="svg-container">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418"
+            />
+          </svg>
+        </div>
+        <div>Globe Express</div>
+      </div>
+      <div>
+        <div class="active">Home</div>
+        <div>Holidays</div>
+        <div>Destinations</div>
+        <div>Flights</div>
+        <div>Offers</div>
+        <div>Contact</div>
+        <div class="svg-container">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+            />
+          </svg>
+        </div>
+        <div class="svg-container">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M7.5 6a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM3.751 20.105a8.25 8.25 0 0116.498 0 .75.75 0 01-.437.695A18.683 18.683 0 0112 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 01-.437-.695z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </div>
+      </div>
+    </nav>
 
-<script src="/Dreamchasers/script/quiz.js"></script>
-</body>
+    <div id="demo"></div>
+
+    <div class="details" id="details-even">
+      <div class="place-box">
+        <div class="text">Switzerland Alps</div>
+      </div>
+      <div class="title-box-1"><div class="title-1">SAINT</div></div>
+      <div class="title-box-2"><div class="title-2">ANTONIEN</div></div>
+      <div class="desc">
+        Tucked away in the Switzerland Alps, Saint Antönien offers an idyllic retreat for those seeking tranquility and adventure alike. It's a hidden gem for backcountry skiing in winter and boasts lush trails for hiking and mountain biking during the warmer months.
+      </div>
+      <div class="cta">
+        <button class="bookmark">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M6.32 2.577a49.255 49.255 0 0111.36 0c1.497.174 2.57 1.46 2.57 2.93V21a.75.75 0 01-1.085.67L12 18.089l-7.165 3.583A.75.75 0 013.75 21V5.507c0-1.47 1.073-2.756 2.57-2.93z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </button>
+        <button class="discover">Discover Location</button>
+      </div>
+    </div>
+
+    <div class="details" id="details-odd">
+      <div class="place-box">
+        <div class="text">Switzerland Alps</div>
+      </div>
+      <div class="title-box-1"><div class="title-1">SAINT </div></div>
+      <div class="title-box-2"><div class="title-2">ANTONIEN</div></div>
+      <div class="desc">
+        Tucked away in the Switzerland Alps, Saint Antönien offers an idyllic retreat for those seeking tranquility and adventure alike. It's a hidden gem for backcountry skiing in winter and boasts lush trails for hiking and mountain biking during the warmer months.
+      </div>
+      <div class="cta">
+        <button class="bookmark">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M6.32 2.577a49.255 49.255 0 0111.36 0c1.497.174 2.57 1.46 2.57 2.93V21a.75.75 0 01-1.085.67L12 18.089l-7.165 3.583A.75.75 0 013.75 21V5.507c0-1.47 1.073-2.756 2.57-2.93z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </button>
+        <button class="discover">Discover Location</button>
+      </div>
+    </div>
+
+    <div class="pagination" id="pagination">
+      <div class="arrow arrow-left">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M15.75 19.5L8.25 12l7.5-7.5"
+          />
+        </svg>
+      </div>
+      <div class="arrow arrow-right">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M8.25 4.5l7.5 7.5-7.5 7.5"
+          />
+        </svg>
+      </div>
+      <div class="progress-sub-container" >
+        <div class="progress-sub-background" >
+            <div class="progress-sub-foreground" ></div>
+        </div>
+    </div>
+    <div class="slide-numbers" id="slide-numbers"></div>
+    </div>
+
+    <div class="cover" ></div>
+   
+    <script src="./script/quiz.js"></script>
+   
+  </body>
 </html>
