@@ -2547,11 +2547,89 @@ i {
   perspective: 1000px;
 }
 
+
+
+#Mercuryplant {
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: url('../media/urannus.gif') center center / cover no-repeat;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+
+
+}
+#venusplant {
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: url('../media/venus.gif') center center / cover no-repeat;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+
+
+}
+
+
+
 #earthplanet {
   width: 500px;
   height: 500px;
   border-radius: 50%;
   background: url('../media/Dailymotion_2.gif') center center / cover no-repeat;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+
+
+}
+
+#Marsplanet {
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: url('../media/Mars.gif') center center / cover no-repeat;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+
+
+}
+#Jupiterplanet {
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: url('../media/jupiter.gif') center center / cover no-repeat;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+
+
+}
+#Saturnplanet {
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: url('../media/saturn.gif') center center / cover no-repeat;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+
+
+}
+#Uranusplanet {
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: url('../media/urannus.gif') center center / cover no-repeat;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+
+
+}
+#Neptuneplanet {
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: url('../media/neptune.gif') center center / cover no-repeat;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+
+
+}
+#Plutoplanet {
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: url('../media/pluto.gif') center center / cover no-repeat;
   box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
 
 
