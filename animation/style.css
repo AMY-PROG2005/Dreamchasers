@@ -2412,7 +2412,7 @@ body .solar_systm .planet_description h2,
 body .solar_systm .planet_description p,
 body .solar_systm .planet_description a {
   font-weight: 100;
-  font-size: 10px;
+  font-size: 14px;
   letter-spacing: 5px;
   margin: 0;
 }
