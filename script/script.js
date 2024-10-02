@@ -126,3 +126,25 @@ marginTopSpans();
 
 }
 setInterval(textanimation, 500);
+
+
+
+// Define the function for the mouseover event
+document.getElementById('solarsysstem').addEventListener('mouseover', function() {
+  // Get both elements by their IDs
+  var solarSystem = document.getElementById('solarsysstem');
+  var ball = document.getElementById('ball');
+  var dot = document.getElementById('dot');
+  
+  // Set their display style to none
+ 
+  ball.style.display = 'none';
+  dot.style.display = 'none';
+});
+document.getElementById('solarsysstem').addEventListener('mouseleave', function() {
+  // Show the ball when mouse leaves 'solarsysstem'
+  var ball = document.getElementById('ball');
+  var dot = document.getElementById('dot');
+  ball.style.display = 'block'; // Or 'inline-block' if it was inline before
+  dot.style.display = 'block'; // Or 'inline-block' if it was inline before
+});
